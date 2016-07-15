@@ -1,0 +1,18 @@
+{
+    "contact_us": {
+        "form": {
+            "header": "Send us a Note",
+            "submit": "Submit",
+            "name": "Name",
+            "email": "E-Mail",
+            "subject": "Subject",
+            "message": "Message"
+        },
+        "errors": {
+            "name": "Invalid Name",
+            "email": "Invalid E-Mail",
+            "subject": "Invalid Subject",
+            "message": "Invalid Message"
+        }
+    }
+}
