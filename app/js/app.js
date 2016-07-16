@@ -68,13 +68,13 @@ SISApplicationPrototype.init = function(config) {
     i18n.throwMissingError(config.throwMissingTranslationError);
 
     dispatcher.on("dispatch", function onDispatch() {
-        cookies.set("virt.tarjeta.state", _this.toJSON());
+        cookies.set("sis.state", _this.toJSON());
     });
-    this.fromJSON(cookies.get("virt.tarjeta.state"));
+    this.fromJSON(cookies.get("sis.state"));
 
     if (config.env !== "production") {
         global.reset = function() {
-            cookies.remove("virt.tarjeta.state");
+            cookies.remove("sis.state");
             location.reload();
         };
     }

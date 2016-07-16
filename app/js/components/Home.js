@@ -3,6 +3,7 @@ var virt = require("@nathanfaucett/virt"),
     propTypes = require("@nathanfaucett/prop_types"),
     eventListener = require("@nathanfaucett/event_listener"),
     Boxes = require("./Boxes"),
+    Services = require("./Services"),
     Wrapper = require("./Wrapper");
 
 
@@ -180,7 +181,8 @@ HomePrototype.render = function() {
                         style: styles.pageBody
                     },
                     i18n("home.satisfied_customers.body")
-                )
+                ),
+                virt.createView(Services)
             ),
             virt.createView(Wrapper,
                 virt.createView("div", {

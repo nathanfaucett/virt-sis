@@ -23,6 +23,20 @@ gulp.task("locale", "compiles locale files to build directory", require("./confi
 
 gulp.task("clean", "clean build files", require("./config/tasks/clean")(config));
 
+
+gulp.task("copy_img", "copys app img to build dir", function() {
+    return vfs.src([
+        config.paths.img + "/**/*"
+    ]).pipe(vfs.dest(config.paths.build + "/img"));
+});
+gulp.task("copy_fonts", "copys app fonts to build dir", function() {
+    return vfs.src([
+        config.paths.fonts + "/**/*"
+    ]).pipe(vfs.dest(config.paths.build + "/fonts"));
+});
+gulp.task("copy", "copys app fonts to build dir", ["copy_img", "copy_fonts"]);
+
+
 gulp.task("serve", "serve build directory", require("./config/tasks/serve")(config));
 
 gulp.task("uglify", "uglify build js", require("./config/tasks/uglify")(config));
@@ -36,7 +50,7 @@ var buildTasks;
 if (config.env !== "production") {
 	buildTasks = ["js", "css", "ejs", "locale"];
 } else {
-	buildTasks = ["js", "css", "ejs", "locale"];
+	buildTasks = ["js", "css", "ejs", "copy", "locale"];
 }
 
 gulp.task("build", "build app in current env", buildTasks, function(done) {
@@ -67,8 +81,8 @@ gulp.task("watch", function() {
     watch([config.paths.js + "/**/*.js", config.paths.webRoot + "/js/**/*.js"], "js_reload");
     watch([
         config.paths.css + "/**/*.less", config.paths.css + "/**/*.css",
-        config.paths.webRoot + "/css/**/*.less", config.paths.webRoot + "/css/**/*.css"],
-    "css_reload");
+        config.paths.webRoot + "/css/**/*.less", config.paths.webRoot + "/css/**/*.css"
+    ], "css_reload");
     watch([config.paths.ejs_src], "ejs_reload");
     watch([config.paths.locale + "/**/*.json"], "locale_reload");
     watch([config.paths.root + "/config/settings/**/*.js"], "js_reload");
