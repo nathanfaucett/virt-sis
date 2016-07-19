@@ -16,7 +16,7 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "@nathanfaucett/array-for_each": "^0.0.1",
-    "@nathanfaucett/comn": "^0.0.1",
+    "@nathanfaucett/comn": "0.0.3",
     "@nathanfaucett/comn_css": "^0.0.2",
     "@nathanfaucett/ejs": "^0.0.1",
     "@nathanfaucett/extend": "^0.0.1",
@@ -35,8 +35,8 @@
     "gulp-jsonminify": "0.0.2",
     "gulp-minify-css": "0.4.6",
     "gulp-minify-html": "1.0.0",
-    "gulp-uglify": "1.1.0",
     "less": "2.4.0",
+    "uglify-js": "^2.7.0",
     "vinyl-fs": "^1.0.0"
   },
   "dependencies": {

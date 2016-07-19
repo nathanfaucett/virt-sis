@@ -124,7 +124,9 @@ ServicesPrototype.getStyles = function() {
                 top: "24px",
                 right: "0px"
             },
-            closeButtonImg: {}
+            closeButtonImg: {
+                cursor: "pointer"
+            }
         };
 
     css.transform(styles.closeButtonImg, "rotate(45deg)");

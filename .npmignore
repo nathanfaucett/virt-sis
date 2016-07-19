@@ -1,5 +1,12 @@
 node_modules
 npm-debug.log
+build
+app/locale
+app/js/config.js
+app/index.css
+app/index.html
+app/index.js
+app/index.js.map
 .npmignore
 .gitignore
 .editorconfig

@@ -4,7 +4,7 @@ var comn = require("@nathanfaucett/comn"),
 
 
 function compile(options, callback) {
-    var out, error;
+    var out, error, entry;
 
     try {
         out = comn(options.index, options);
@@ -15,7 +15,27 @@ function compile(options, callback) {
     if (error) {
         callback(error);
     } else {
-        fileUtils.writeFile(options.out, out, callback);
+        entry = out.entry();
+
+        if (options.generateSourceMap) {
+            entry.generateSourceMap();
+        }
+
+        fileUtils.writeFile(
+            options.out,
+            "//# sourceMappingURL=index.js.map\n" + entry.source,
+            function(error) {
+                if (error) {
+                    callback(error);
+                } else {
+                    if (options.generateSourceMap) {
+                        fileUtils.writeFile(options.outSourceMap, entry.sourceMap.toJSON(), callback);
+                    } else {
+                        callback();
+                    }
+                }
+            }
+        );
     }
 }
 
@@ -23,7 +43,9 @@ module.exports = function(config) {
     return function(done) {
         compile({
             index: config.paths.js_src,
-            out: config.paths.js_out
+            out: config.paths.js_out,
+            generateSourceMap: true,
+            outSourceMap: config.paths.js_map_out
         }, done);
     };
 };

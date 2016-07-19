@@ -8,6 +8,7 @@ module.exports = {
 
     js_src: path.join(defaults.js, "index.js"),
     js_out: path.join(defaults.build, "index.js"),
+    js_map_out: path.join(defaults.build, "index.js.map"),
 
     css_src: path.join(defaults.css, "index.less"),
     css_out: path.join(defaults.build, "index.css"),
