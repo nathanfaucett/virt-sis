@@ -5,7 +5,7 @@
 
         "boxes": {
             "we": "We",
-            "title": "What you need",
+            "title": "What do you need?",
             "body0": "Nondestrctive Testing",
             "body1": "Paper Machine Roll Inspection",
             "body2": "Suction Shell Inspection",
@@ -17,6 +17,11 @@
             "satisfied": "Satisfied",
             "customers": "Customers",
             "body": " aksdfjasdjf kldasj fasdfk asjf lkjasfkl jsadkfl jkasfj dkasfj kldasjfkasjd gfljkashgkjdsfhgkj sdfj gksdf gkdsj gkldfsj gkldfsgj kldsfjg lksdfghkljasjgkfl jasfkljas dlkgjasgk jfkasgj kasdfj lkdasgj klfasgj klfas gjdaksjgf lkasjg kasj gkl"
+        },
+
+        "standards": {
+            "header": "Quality Standards",
+            "body": "We hold ourselves to rigorous standards at Southern Industrial Services, and are constantly seeking to improve and innovate. We are extremel confident in our ability to perform the highest quality of inspections on the job"
         }
     }
 }

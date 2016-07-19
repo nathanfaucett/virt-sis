@@ -109,7 +109,30 @@ HomePrototype.getStyles = function() {
                 color: theme.palette.accent1Color
             },
 
+            standards: {
+                top: "0px",
+                left: "50%",
+                marginLeft: "-300px",
+                maxWidth: "600px",
+                position: "absolute"
+            },
+            standardsHeader: {
+                textAlign: "center",
+                fontSize: "64px",
+                lineHeight: "64px",
+                color: theme.palette.canvasColor
+            },
+            standardsBody: {
+                background: theme.palette.canvasColor,
+                padding: "64px 128px",
+                textAlign: "justify",
+                fontSize: "18px",
+                lineHeight: "24px",
+                color: theme.palette.grey2Color
+            },
+
             footer: {
+                position: "relative",
                 marginBottom: "-1px"
             }
         };
@@ -121,6 +144,20 @@ HomePrototype.getStyles = function() {
         styles.title.lineHeight = "32px";
         styles.body.fontSize = "16px";
         styles.body.lineHeight = "16px";
+
+        delete styles.standards.position;
+        delete styles.standards.top;
+        delete styles.standards.left;
+        delete styles.standards.marginLeft;
+        delete styles.standards.maxWidth;
+        styles.standards.textAlign = "center";
+        styles.standardsHeader.color = theme.palette.grey2Color;
+    }
+    if (size.width < 480) {
+        styles.standardsBody.padding = "64px 128px";
+    }
+    if (size.width < 1110) {
+        styles.standardsBody.padding = "32px 64px";
     }
 
     css.opacity(styles.glare, 0.2);
@@ -190,7 +227,17 @@ HomePrototype.render = function() {
                     },
                     virt.createView("img", {
                         src: "img/menatwork.jpg"
-                    })
+                    }),
+                    virt.createView("div", {
+                            style: styles.standards
+                        },
+                        virt.createView("h1", {
+                            style: styles.standardsHeader
+                        }, i18n("home.standards.header")),
+                        virt.createView("p", {
+                            style: styles.standardsBody
+                        }, '"' + i18n("home.standards.body") + '"')
+                    )
                 )
             )
         )

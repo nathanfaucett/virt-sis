@@ -35,7 +35,7 @@ FooterPrototype.getStyles = function() {
             },
 
             top: {
-                background: theme.palette.primary2Color,
+                background: theme.palette.primary3Color,
                 textAlign: "center"
             },
             slogan: {

@@ -43,7 +43,7 @@ HeaderPrototype.getStyles = function() {
             },
 
             name: {
-                color: theme.palette.grey1Color,
+                color: theme.palette.grey2Color,
                 textAlign: "center",
                 margin: "0",
                 padding: "16px 0px",
@@ -109,19 +109,20 @@ HeaderPrototype.render = function() {
                     ),
                     virt.createView("div", {
                             className: "col-xs-6 col-sm-6 col-md-4 col-lg-4"
-                        },
-                        virt.createView("div", {
-                                style: styles.menu
-                            },
-                            virt.createView("a", {
-                                    style: styles.menuA
-                                },
-                                virt.createView("img", {
-                                    style: styles.menuImg,
-                                    src: "img/menu.png"
-                                })
-                            )
-                        )
+                        }
+                        /*,
+                                                virt.createView("div", {
+                                                        style: styles.menu
+                                                    },
+                                                    virt.createView("a", {
+                                                            style: styles.menuA
+                                                        },
+                                                        virt.createView("img", {
+                                                            style: styles.menuImg,
+                                                            src: "img/menu.png"
+                                                        })
+                                                    )
+                                                )*/
                     )
                 )
             )

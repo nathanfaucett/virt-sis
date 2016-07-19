@@ -35,14 +35,16 @@ SISFlooringThemePrototype.getSpacing = function() {
 
 SISFlooringThemePrototype.getPalette = function() {
     return {
-        primary1Color: "#0a1296",
-        primary2Color: "#0086ff",
+        primary1Color: "#3a345a",
+        primary2Color: "#434371",
+        primary3Color: "#4f5891",
+        primary4Color: "#7f8fb8",
 
-        accent1Color: "#ff5b29",
+        accent1Color: "#ff6600",
 
-        grey1Color: "#bfbfbf",
-        grey2Color: "#6a6a6a",
-        grey3Color: "#565656",
+        grey1Color: "#f2f2f2",
+        grey2Color: "#575555",
+        grey3Color: "#252525",
 
         textColor: "rgba(0, 0, 0, 0.87)",
         canvasColor: css.colors.white,

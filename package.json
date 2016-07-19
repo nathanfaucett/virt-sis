@@ -57,7 +57,7 @@
     "@nathanfaucett/inherits": "^0.0.1",
     "@nathanfaucett/is_string": "^0.0.1",
     "@nathanfaucett/key_mirror": "^0.0.1",
-    "@nathanfaucett/layers_browser": "^0.0.1",
+    "@nathanfaucett/layers_browser": "^0.0.2",
     "@nathanfaucett/native.less": "^0.0.2",
     "@nathanfaucett/object-map": "0.0.1",
     "@nathanfaucett/page": "^0.0.1",
