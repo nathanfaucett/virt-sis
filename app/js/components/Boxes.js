@@ -1,6 +1,8 @@
 var virt = require("@nathanfaucett/virt"),
     css = require("@nathanfaucett/css"),
-    propTypes = require("@nathanfaucett/prop_types");
+    propTypes = require("@nathanfaucett/prop_types"),
+    scrollTo = require("../utils/scrollTo"),
+    Link = require("./Link");
 
 
 var BoxesPrototype;
@@ -10,7 +12,13 @@ module.exports = Boxes;
 
 
 function Boxes(props, children, context) {
+    var _this = this;
+
     virt.Component.call(this, props, children, context);
+
+    this.onClick = function(e) {
+        return _this.__onClick(e);
+    };
 }
 virt.Component.extend(Boxes, "Boxes");
 
@@ -21,6 +29,10 @@ Boxes.contextTypes = {
     ctx: propTypes.object.isRequired,
     theme: propTypes.object.isRequired,
     size: propTypes.object.isRequired
+};
+
+BoxesPrototype.__onClick = function() {
+    scrollTo(0, document.getElementById("ContactUs").offsetTop);
 };
 
 BoxesPrototype.getStyles = function() {
@@ -75,8 +87,13 @@ BoxesPrototype.getStyles = function() {
                 color: theme.palette.grey1Color
             },
             boxesLink: {
-                margin: "16px 0px",
-                color: theme.palette.accent1Color
+                margin: "4px 0px",
+                padding: "8px 24px",
+                fontSize: "18px",
+                fontWeight: "bold",
+                color: theme.palette.canvasColor,
+                textTransform: "uppercase",
+                backgroundColor: theme.palette.accent1Color
             },
 
             equals: {
@@ -175,7 +192,8 @@ BoxesPrototype.render = function() {
                             virt.createView("h3", {
                                 style: styles.boxesBody
                             }, i18n("home.boxes.body2")),
-                            virt.createView("a", {
+                            virt.createView(Link, {
+                                onClick: this.onClick,
                                 style: styles.boxesLink
                             }, i18n("home.boxes.link"))
                         )

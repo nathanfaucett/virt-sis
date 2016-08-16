@@ -57,6 +57,7 @@ HomePrototype.getStyles = function() {
             },
 
             container: {
+                paddingBottom: "16px",
                 position: "relative",
                 overflow: "hidden",
                 width: "100%",
@@ -114,8 +115,8 @@ HomePrototype.getStyles = function() {
             standards: {
                 top: "0px",
                 left: "50%",
-                marginLeft: "-300px",
-                maxWidth: "600px",
+                marginLeft: "-320px",
+                maxWidth: "640px",
                 position: "absolute"
             },
             standardsHeader: {
@@ -154,12 +155,18 @@ HomePrototype.getStyles = function() {
         delete styles.standards.maxWidth;
         styles.standards.textAlign = "center";
         styles.standardsHeader.color = theme.palette.grey2Color;
+
+        styles.pageBody.padding = "0px 16px";
     }
-    if (size.width < 480) {
-        styles.standardsBody.padding = "64px 128px";
-    }
+
     if (size.width < 1110) {
         styles.standardsBody.padding = "32px 64px";
+    }
+    if (size.width < 640) {
+        styles.pageContent.margin = "0px auto";
+    }
+    if (size.width < 480) {
+        styles.standardsBody.padding = "64px 16px";
     }
 
     css.opacity(styles.glare, 0.2);

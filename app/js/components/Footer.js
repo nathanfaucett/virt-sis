@@ -1,5 +1,6 @@
 var virt = require("@nathanfaucett/virt"),
-    propTypes = require("@nathanfaucett/prop_types");
+    propTypes = require("@nathanfaucett/prop_types"),
+    Link = require("./Link");
 
 
 var FooterPrototype;
@@ -119,7 +120,9 @@ FooterPrototype.render = function() {
                                 }, i18n("footer.address")),
                                 virt.createView("p", {
                                     style: styles.locationP
-                                }, i18n("footer.email"))
+                                }, virt.createView(Link,
+                                    i18n("footer.email")
+                                ))
                             )
                         ),
                         virt.createView("div", {

@@ -122,7 +122,7 @@ ServicesPrototype.getStyles = function() {
             closeButton: {
                 position: "absolute",
                 top: "24px",
-                right: "0px"
+                right: "-8px"
             },
             closeButtonImg: {
                 cursor: "pointer"
@@ -146,6 +146,9 @@ ServicesPrototype.getStyles = function() {
         styles.leftService["float"] = "left";
         styles.rightService["float"] = "right";
         styles.serviceBody.width = "608px";
+    }
+    if (size.width < 640) {
+        styles.closeButton.right = "24px";
     }
 
     styles.topLeftService = extend({

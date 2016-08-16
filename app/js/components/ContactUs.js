@@ -78,12 +78,6 @@ ContactUsPrototype.getStyles = function() {
                 padding: "32px 16px",
                 background: theme.palette.canvasColor
             },
-            formLabel: {
-                display: "block",
-                marginBottom: "4px",
-                fontSize: "1.5em",
-                fontWeight: "bold"
-            },
             formInput: {
                 padding: "8px",
                 marginBottom: "8px",
@@ -102,13 +96,11 @@ ContactUsPrototype.getStyles = function() {
                 fontWeight: "bold",
                 fontSize: "20px",
                 textTransform: "uppercase",
-                background: theme.palette.primary3Color,
+                background: theme.palette.accent1Color,
                 color: theme.palette.canvasColor,
                 padding: "8px 24px"
             }
         };
-
-    css.boxShadow(styles.formSubmit, theme.styles.boxShadow);
 
     css.borderRadius(styles.formSubmit, "0px");
     css.borderRadius(styles.formInput, "0px");
@@ -125,6 +117,7 @@ ContactUsPrototype.render = function() {
     return (
         virt.createView("div", {
                 className: "ContactUs",
+                id: "ContactUs",
                 style: styles.root
             },
             virt.createView("h1", {
@@ -135,45 +128,33 @@ ContactUsPrototype.render = function() {
                     method: "POST",
                     action: "email.php"
                 },
-                virt.createView("label", {
-                    style: styles.formLabel,
-                    "for": "name"
-                }, i18n("contact_us.form.name")),
                 virt.createView(Input, {
                     name: "name",
+                    placeholder: i18n("contact_us.form.name"),
                     onInput: this.onInput,
                     style: styles.formInput,
                     value: state.name,
                     type: "text"
                 }),
-                virt.createView("label", {
-                    style: styles.formLabel,
-                    "for": "email"
-                }, i18n("contact_us.form.email")),
                 virt.createView(Input, {
                     name: "email",
+                    placeholder: i18n("contact_us.form.email"),
                     onInput: this.onInput,
                     style: styles.formInput,
                     value: state.email,
                     type: "email"
                 }),
-                virt.createView("label", {
-                    style: styles.formLabel,
-                    "for": "subject"
-                }, i18n("contact_us.form.subject")),
                 virt.createView(Input, {
                     name: "subject",
+                    placeholder: i18n("contact_us.form.subject"),
                     onInput: this.onInput,
                     style: styles.formInput,
                     value: state.subject,
                     type: "text"
                 }),
-                virt.createView("label", {
-                    style: styles.formLabel,
-                    "for": "message"
-                }, i18n("contact_us.form.message")),
                 virt.createView(Input, {
                     name: "message",
+                    placeholder: i18n("contact_us.form.message"),
                     inputType: "textarea",
                     onInput: this.onInput,
                     style: styles.formTextArea,
