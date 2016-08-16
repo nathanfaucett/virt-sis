@@ -34,7 +34,12 @@ gulp.task("copy_fonts", "copys app fonts to build dir", function() {
         config.paths.fonts + "/**/*"
     ]).pipe(vfs.dest(config.paths.build + "/fonts"));
 });
-gulp.task("copy", "copys app fonts to build dir", ["copy_img", "copy_fonts"]);
+gulp.task("copy_email", "copys email.php to build dir", function() {
+    return vfs.src([
+        config.paths.app + "/email.php"
+    ]).pipe(vfs.dest(config.paths.build));
+});
+gulp.task("copy", "copys app fonts to build dir", ["copy_email", "copy_img", "copy_fonts"]);
 
 
 gulp.task("serve", "serve build directory", require("./config/tasks/serve")(config));

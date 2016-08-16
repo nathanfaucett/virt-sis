@@ -119,7 +119,7 @@ FooterPrototype.render = function() {
                                 }, i18n("footer.address")),
                                 virt.createView("p", {
                                     style: styles.locationP
-                                }, i18n("footer.phone"))
+                                }, i18n("footer.email"))
                             )
                         ),
                         virt.createView("div", {

@@ -1,23 +1,22 @@
 {
     "home": {
-        "title": "Nondestrctive Testing for the Masses",
-        "body": "A new way to battle harden your products",
+        "title": "Nondestructive Testing",
+        "body": "Detecting. Analyzing. Preventing.",
 
         "boxes": {
             "we": "We",
-            "title": "What do you need?",
+            "title": "The Premier Choice for all your NDT needs",
             "body0": "Nondestrctive Testing",
-            "body1": "Paper Machine Roll Inspection",
-            "body2": "Suction Shell Inspection",
-            "body3": "Paper Machine Dryer Can Inspection",
+            "body1": "What can we do for you?",
+            "body2": "Information",
             "link": "Get Started Today"
         },
 
-        "satisfied_customers": {
-            "satisfied": "Satisfied",
-            "customers": "Customers",
-            "body": " aksdfjasdjf kldasj fasdfk asjf lkjasfkl jsadkfl jkasfj dkasfj kldasjfkasjd gfljkashgkjdsfhgkj sdfj gksdf gkdsj gkldfsj gkldfsgj kldsfjg lksdfghkljasjgkfl jasfkljas dlkgjasgk jfkasgj kasdfj lkdasgj klfasgj klfas gjdaksjgf lkasjg kasj gkl"
-        },
+        "mission": {
+            "our": "Our",
+            "mission": "Mission",
+            "body": "To provide industry leading testing. Use synergy and innovation to empower our partners to achieve more. Operate everyday of business with the same integrity that the company was founded on. Take nondestructive testing to the next level of efficiency, quality, and affordability."
+          },
 
         "standards": {
             "header": "Quality Standards",

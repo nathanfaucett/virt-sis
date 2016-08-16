@@ -175,9 +175,6 @@ BoxesPrototype.render = function() {
                             virt.createView("h3", {
                                 style: styles.boxesBody
                             }, i18n("home.boxes.body2")),
-                            virt.createView("h3", {
-                                style: styles.boxesBody
-                            }, i18n("home.boxes.body3")),
                             virt.createView("a", {
                                 style: styles.boxesLink
                             }, i18n("home.boxes.link"))

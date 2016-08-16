@@ -63,6 +63,11 @@ SISFlooringThemePrototype.getStyles = function(palette /*, spacing */ ) {
             focusColor: palette.accent1Color,
             downColor: palette.accent1Color
         },
+        input: {
+            color: palette.textColor,
+            borderColor: palette.primary3Color,
+            focusBorderColor: palette.accent1Color
+        },
         boxShadow: "1px 2px 8px 0px " + palette.disabledColor
     };
     return styles;

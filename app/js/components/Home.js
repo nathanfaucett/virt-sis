@@ -3,6 +3,7 @@ var virt = require("@nathanfaucett/virt"),
     propTypes = require("@nathanfaucett/prop_types"),
     eventListener = require("@nathanfaucett/event_listener"),
     Boxes = require("./Boxes"),
+    ContactUs = require("./ContactUs"),
     Services = require("./Services"),
     Wrapper = require("./Wrapper");
 
@@ -103,6 +104,7 @@ HomePrototype.getStyles = function() {
                 textAlign: "center"
             },
             pageBody: {
+                fontSize: "20px",
                 paddingBottom: "64px"
             },
             highlight: {
@@ -208,16 +210,16 @@ HomePrototype.render = function() {
                 virt.createView("h1", {
                         style: styles.pageTitle
                     },
-                    virt.createView("span", i18n("home.satisfied_customers.satisfied")),
+                    virt.createView("span", i18n("home.mission.our")),
                     virt.createView("span", " "),
                     virt.createView("span", {
                         style: styles.highlight
-                    }, i18n("home.satisfied_customers.customers"))
+                    }, i18n("home.mission.mission"))
                 ),
                 virt.createView("p", {
                         style: styles.pageBody
                     },
-                    i18n("home.satisfied_customers.body")
+                    i18n("home.mission.body")
                 ),
                 virt.createView(Services)
             ),
@@ -239,6 +241,9 @@ HomePrototype.render = function() {
                         }, '"' + i18n("home.standards.body") + '"')
                     )
                 )
+            ),
+            virt.createView(Wrapper,
+                virt.createView(ContactUs)
             )
         )
     );
