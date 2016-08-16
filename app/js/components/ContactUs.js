@@ -25,7 +25,6 @@ function ContactUs(props, children, context) {
     this.onSubmit = function(e) {
         return _this.__onSubmit(e);
     };
-
     this.onInput = function(e) {
         return _this.__onInput(e);
     };
@@ -53,6 +52,10 @@ ContactUsPrototype.__onInput = function(e) {
             _this.setState(state);
         }
     });
+};
+
+ContactUsPrototype.__onSubmit = function() {
+    ga("set", "page", "contact_us");
 };
 
 ContactUsPrototype.getStyles = function() {
@@ -178,6 +181,7 @@ ContactUsPrototype.render = function() {
                 }),
                 virt.createView("input", {
                     style: styles.formSubmit,
+                    onClick: this.onSubmit,
                     value: i18n("contact_us.form.submit"),
                     type: "submit"
                 })
