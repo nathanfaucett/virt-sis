@@ -26,7 +26,7 @@
     $subject = "Southern Industrial Services Contact Form - From $email - $post_subject";
     $body = "<html><body><p>$message</p><p>From $email</p></body></html>";
 
-    $to = "nathanfaucett@gmail.com";
+    $to = "info@sistesting.com";
 
     $headers = "From: $email \r\n";
     $headers .= "Reply-To: $email \r\n";
