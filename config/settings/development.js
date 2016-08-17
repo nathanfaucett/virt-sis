@@ -1,5 +1,5 @@
 module.exports = {
-    apiUrl: process.env.API_URL,
     throwMissingTranslationError: false,
-    html5Mode: false
+    html5Mode: false,
+    baseUrl: "http://localhost"
 };

@@ -1,4 +1,5 @@
 var apt = require("@nathanfaucett/apt"),
+    googleAnalytics = require("../googleAnalytics"),
     app = require("../app");
 
 
@@ -29,7 +30,7 @@ function RouteStore_update(ctx, state) {
     context.query = ctx.query;
     context.params = ctx.params;
 
-    ga("set", "page", state);
+    googleAnalytics("set", "page", state);
     _route.state = state;
 }
 

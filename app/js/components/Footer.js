@@ -77,6 +77,7 @@ FooterPrototype.getStyles = function() {
 FooterPrototype.render = function() {
     var context = this.context,
         i18n = context.i18n,
+        theme = context.theme,
         styles = this.getStyles();
 
     return (
@@ -120,7 +121,10 @@ FooterPrototype.render = function() {
                                 }, i18n("footer.address")),
                                 virt.createView("p", {
                                     style: styles.locationP
-                                }, virt.createView(Link,
+                                }, virt.createView(Link, {
+                                        href: "mailto:" + i18n("footer.email"),
+                                        color: theme.palette.primary4Color
+                                    },
                                     i18n("footer.email")
                                 ))
                             )

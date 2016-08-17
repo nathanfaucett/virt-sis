@@ -78,11 +78,12 @@ ServicesPrototype.getStyles = function() {
                 overflow: "hidden",
                 position: "relative",
                 color: theme.palette.canvasColor,
-                padding: "64px 0px 32px 0px",
+                padding: "64px 0px 32px",
                 textAlign: "center",
                 height: "480px"
             },
             serviceHeader: {
+                padding: "0 8px",
                 cursor: "pointer",
                 margin: "0"
             },
@@ -121,15 +122,15 @@ ServicesPrototype.getStyles = function() {
             },
             closeButton: {
                 position: "absolute",
-                top: "24px",
-                right: "-8px"
+                top: "16px",
+                right: "16px"
             },
             closeButtonImg: {
                 cursor: "pointer"
             }
         };
 
-    css.transform(styles.closeButtonImg, "rotate(45deg)");
+    css.transform(styles.closeButtonImg, "rotate(45deg) scale(0.9)");
 
     css.transition(styles.service,
         "width 200ms " + css.easing.inOut + " 0ms",
@@ -145,7 +146,7 @@ ServicesPrototype.getStyles = function() {
         styles.leftService.width = styles.rightService.width = "48%";
         styles.leftService["float"] = "left";
         styles.rightService["float"] = "right";
-        styles.serviceBody.width = "608px";
+        styles.serviceBody.width = "640px";
     }
     if (size.width < 640) {
         styles.closeButton.right = "24px";

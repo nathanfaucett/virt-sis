@@ -87,8 +87,8 @@ BoxesPrototype.getStyles = function() {
                 color: theme.palette.grey1Color
             },
             boxesLink: {
-                margin: "4px 0px",
-                padding: "8px 24px",
+                margin: "16px 0px 32px",
+                padding: "16px 24px",
                 fontSize: "18px",
                 fontWeight: "bold",
                 color: theme.palette.canvasColor,
@@ -183,15 +183,6 @@ BoxesPrototype.render = function() {
                             virt.createView("h1", {
                                 style: styles.boxesTitle
                             }, i18n("home.boxes.title")),
-                            virt.createView("h3", {
-                                style: styles.boxesBody
-                            }, i18n("home.boxes.body0")),
-                            virt.createView("h3", {
-                                style: styles.boxesBody
-                            }, i18n("home.boxes.body1")),
-                            virt.createView("h3", {
-                                style: styles.boxesBody
-                            }, i18n("home.boxes.body2")),
                             virt.createView(Link, {
                                 onClick: this.onClick,
                                 style: styles.boxesLink

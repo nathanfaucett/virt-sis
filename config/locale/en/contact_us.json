@@ -8,11 +8,7 @@
             "subject": "Subject",
             "message": "Message"
         },
-        "errors": {
-            "name": "Invalid Name",
-            "email": "Invalid E-Mail",
-            "subject": "Invalid Subject",
-            "message": "Invalid Message"
-        }
+        "success": "Thank you for contacting us we will be in contact with you as soon as possiblie",
+        "error": "There was an Error sending your email"
     }
 }

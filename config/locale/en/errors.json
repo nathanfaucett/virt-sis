@@ -1,5 +1,7 @@
 {
     "errors": {
-        "not_found": "404 - Page Not Found"
+        "not_found": "404 - Page Not Found",
+        "required": "%s is required",
+        "email": "Enter a valid email"
     }
 }

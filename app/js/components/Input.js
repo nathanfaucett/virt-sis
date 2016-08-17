@@ -1,6 +1,7 @@
 var virt = require("@nathanfaucett/virt"),
     css = require("@nathanfaucett/css"),
     propTypes = require("@nathanfaucett/prop_types"),
+    arrayMap = require("@nathanfaucett/array-map"),
     extend = require("@nathanfaucett/extend");
 
 
@@ -31,10 +32,12 @@ virt.Component.extend(Input, "Input");
 InputPrototype = Input.prototype;
 
 Input.propTypes = {
+    errors: propTypes.array.isRequired,
     inputType: propTypes.string.isRequired
 };
 
 Input.defaultProps = {
+    errors: [],
     inputType: "input"
 };
 
@@ -72,27 +75,35 @@ InputPrototype.getStyle = function() {
         inputTheme = theme.styles.input,
         state = this.state,
         styles = {
-            color: props.color || inputTheme.color,
-            borderColor: props.borderColor || inputTheme.borderColor,
-            backgroundColor: theme.palette.canvasColor,
-            textDecoration: "none"
+            root: {},
+            input: {
+                color: props.color || inputTheme.color,
+                borderColor: props.borderColor || inputTheme.borderColor,
+                backgroundColor: theme.palette.canvasColor,
+                textDecoration: "none"
+            },
+            errors: {},
+            error: {
+                color: theme.palette.red1Color
+            }
         };
 
-    css.transition(styles, "border-color 200ms " + css.easing.inOut + " 0ms");
+    css.transition(styles.input, "border-color 200ms " + css.easing.inOut + " 0ms");
 
     if (state.focus) {
-        styles.borderColor = props.focusBorderColor || inputTheme.focusBorderColor;
+        styles.input.borderColor = props.focusBorderColor || inputTheme.focusBorderColor;
     }
 
     return styles;
 };
 
 InputPrototype.render = function() {
-    var props = extend({}, this.props);
+    var styles = this.getStyle(),
+        props = extend({}, this.props);
 
     props.ref = "input";
     props.className = "Input";
-    props.style = extend(this.getStyle(), props.style);
+    props.style = extend(styles.input, props.style);
     props.onFocus = this.onFocus;
     props.onBlur = this.onBlur;
 
@@ -103,7 +114,22 @@ InputPrototype.render = function() {
     }
 
     return (
-        virt.createView("div",
+        virt.createView("div", {
+                styles: styles.root
+            },
+            virt.createView("ul", {
+                    style: styles.errors
+                },
+                arrayMap(props.errors, function each(error) {
+                    return (
+                        virt.createView("li", {
+                                style: styles.error
+                            },
+                            error
+                        )
+                    );
+                })
+            ),
             virt.createView(props.inputType, props)
         )
     );

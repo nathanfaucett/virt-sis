@@ -31,6 +31,10 @@
 
     <script type="application/javascript" charset="utf-8" async="" src="index.js"></script>
 
+    <% if (env === "production") { %>
+    <script type="application/javascript" charset="utf-8" src="https://www.google-analytics.com/analytics.js"></script>
+    <% } %>
+
     <% if (useLiveReload) { %>
     <script type="application/javascript" charset="utf-8" async="" src="//localhost:<%= liveReloadPort %>/livereload.js"></script>
     <% } %>
@@ -39,8 +43,6 @@
   <body>
 
     <div id="app"></div>
-
-    <script type="application/javascript" charset="utf-8" src="https://www.google-analytics.com/analytics.js"></script>
 
   </body>
 

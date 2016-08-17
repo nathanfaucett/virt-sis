@@ -40,7 +40,9 @@
     "vinyl-fs": "^1.0.0"
   },
   "dependencies": {
+    "@nathanfaucett/apply": "0.0.1",
     "@nathanfaucett/apt": "^0.0.1",
+    "@nathanfaucett/array-map": "0.0.1",
     "@nathanfaucett/constantize": "^0.0.1",
     "@nathanfaucett/cookies": "^0.0.1",
     "@nathanfaucett/create-grid.less": "^0.0.2",
@@ -59,10 +61,11 @@
     "@nathanfaucett/key_mirror": "^0.0.1",
     "@nathanfaucett/layers_browser": "^0.0.2",
     "@nathanfaucett/native.less": "^0.0.3",
+    "@nathanfaucett/object-for_each": "0.0.1",
     "@nathanfaucett/object-map": "0.0.1",
     "@nathanfaucett/page": "^0.0.1",
     "@nathanfaucett/prop_types": "0.0.1",
-    "@nathanfaucett/request": "^0.0.2",
+    "@nathanfaucett/request": "0.0.3",
     "@nathanfaucett/request_animation_frame": "0.0.1",
     "@nathanfaucett/theme": "^0.0.1",
     "@nathanfaucett/virt": "^0.0.1",
