@@ -49,6 +49,8 @@ SISFlooringThemePrototype.getPalette = function() {
         textColor: "rgba(0, 0, 0, 0.87)",
         canvasColor: css.colors.white,
 
+        red1Color: "#f10000",
+
         borderColor: "#6a6a6a",
 
         disabledColor: "rgba(0, 0, 0, 0.262)"

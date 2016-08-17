@@ -1,7 +1,8 @@
 var virt = require("@nathanfaucett/virt"),
     css = require("@nathanfaucett/css"),
     propTypes = require("@nathanfaucett/prop_types"),
-    scrollTo = require("../utils/scrollTo"),
+    scrollTo = require("@nathanfaucett/scroll_to"),
+    easing = require("@nathanfaucett/easing"),
     Link = require("./Link");
 
 
@@ -32,7 +33,17 @@ Boxes.contextTypes = {
 };
 
 BoxesPrototype.__onClick = function() {
-    scrollTo(0, document.getElementById("ContactUs").offsetTop);
+    var div = document.getElementById("ContactUs");
+
+    scrollTo(
+        window.scrollX,
+        window.scrollY,
+        div.offsetLeft,
+        div.offsetTop,
+        1000,
+        easing.inOutQuad,
+        window.scrollTo
+    );
 };
 
 BoxesPrototype.getStyles = function() {
@@ -80,6 +91,7 @@ BoxesPrototype.getStyles = function() {
             },
             boxesTitle: {
                 margin: "16px 0px",
+                fontSize: "24px",
                 color: theme.palette.canvasColor
             },
             boxesBody: {

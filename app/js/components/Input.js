@@ -84,6 +84,7 @@ InputPrototype.getStyle = function() {
             },
             errors: {},
             error: {
+                padding: "0px 8px 8px",
                 color: theme.palette.red1Color
             }
         };

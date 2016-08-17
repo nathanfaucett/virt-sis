@@ -47,6 +47,7 @@
     "@nathanfaucett/cookies": "^0.0.1",
     "@nathanfaucett/create-grid.less": "^0.0.2",
     "@nathanfaucett/css": "^0.0.1",
+    "@nathanfaucett/easing": "0.0.1",
     "@nathanfaucett/empty_function": "^0.0.1",
     "@nathanfaucett/environment": "^0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.1",
@@ -67,6 +68,7 @@
     "@nathanfaucett/prop_types": "0.0.1",
     "@nathanfaucett/request": "0.0.3",
     "@nathanfaucett/request_animation_frame": "0.0.1",
+    "@nathanfaucett/scroll_to": "0.0.1",
     "@nathanfaucett/theme": "^0.0.1",
     "@nathanfaucett/virt": "^0.0.1",
     "@nathanfaucett/virt-dom": "^0.0.1"
