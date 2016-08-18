@@ -31,7 +31,7 @@
 
     <script type="application/javascript" charset="utf-8" async="" src="index.js"></script>
 
-    <% if (env === "production") { %>
+    <% if (env === "production" && env === "staging") { %>
     <script type="application/javascript" charset="utf-8" src="https://www.google-analytics.com/analytics.js"></script>
     <% } %>
 

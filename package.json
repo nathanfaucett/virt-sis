@@ -48,7 +48,7 @@
     "@nathanfaucett/create-grid.less": "^0.0.2",
     "@nathanfaucett/css": "^0.0.1",
     "@nathanfaucett/easing": "0.0.1",
-    "@nathanfaucett/empty_function": "^0.0.1",
+    "@nathanfaucett/empty_function": "0.0.1",
     "@nathanfaucett/environment": "^0.0.1",
     "@nathanfaucett/event_emitter": "^0.0.1",
     "@nathanfaucett/event_listener": "^0.0.1",

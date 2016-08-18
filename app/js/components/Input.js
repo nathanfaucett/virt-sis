@@ -33,12 +33,12 @@ InputPrototype = Input.prototype;
 
 Input.propTypes = {
     errors: propTypes.array.isRequired,
-    inputType: propTypes.string.isRequired
+    elementType: propTypes.string.isRequired
 };
 
 Input.defaultProps = {
     errors: [],
-    inputType: "input"
+    elementType: "input"
 };
 
 Input.contextTypes = {
@@ -131,7 +131,7 @@ InputPrototype.render = function() {
                     );
                 })
             ),
-            virt.createView(props.inputType, props)
+            virt.createView(props.elementType, props)
         )
     );
 };

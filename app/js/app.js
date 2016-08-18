@@ -72,7 +72,7 @@ SISApplicationPrototype.init = function(config) {
     });
     this.fromJSON(cookies.get("sis.state"));
 
-    if (config.env !== "production") {
+    if (config.env !== "production" && config.env !== "staging") {
         global.reset = function() {
             cookies.remove("sis.state");
             location.reload();

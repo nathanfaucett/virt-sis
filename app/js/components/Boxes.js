@@ -3,7 +3,8 @@ var virt = require("@nathanfaucett/virt"),
     propTypes = require("@nathanfaucett/prop_types"),
     scrollTo = require("@nathanfaucett/scroll_to"),
     easing = require("@nathanfaucett/easing"),
-    Link = require("./Link");
+    emptyFunction = require("@nathanfaucett/empty_function"),
+    Button = require("./Button");
 
 
 var BoxesPrototype;
@@ -42,7 +43,8 @@ BoxesPrototype.__onClick = function() {
         div.offsetTop,
         1000,
         easing.inOutQuad,
-        window.scrollTo
+        window.scrollTo,
+        emptyFunction
     );
 };
 
@@ -97,15 +99,6 @@ BoxesPrototype.getStyles = function() {
             boxesBody: {
                 margin: "8px 0px",
                 color: theme.palette.grey1Color
-            },
-            boxesLink: {
-                margin: "16px 0px 32px",
-                padding: "16px 24px",
-                fontSize: "18px",
-                fontWeight: "bold",
-                color: theme.palette.canvasColor,
-                textTransform: "uppercase",
-                backgroundColor: theme.palette.accent1Color
             },
 
             equals: {
@@ -195,9 +188,8 @@ BoxesPrototype.render = function() {
                             virt.createView("h1", {
                                 style: styles.boxesTitle
                             }, i18n("home.boxes.title")),
-                            virt.createView(Link, {
-                                onClick: this.onClick,
-                                style: styles.boxesLink
+                            virt.createView(Button, {
+                                onClick: this.onClick
                             }, i18n("home.boxes.link"))
                         )
                     ),

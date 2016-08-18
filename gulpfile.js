@@ -52,14 +52,14 @@ gulp.task("minify_json", "minify build json", require("./config/tasks/minify_jso
 gulp.task("minify", "minify built app", ["uglify", "minify_css", "minify_html", "minify_json"]);
 
 var buildTasks;
-if (config.env !== "production") {
+if (config.env !== "production" && config.env !== "staging") {
 	buildTasks = ["js", "css", "ejs", "locale"];
 } else {
 	buildTasks = ["js", "css", "ejs", "copy", "locale"];
 }
 
 gulp.task("build", "build app in current env", buildTasks, function(done) {
-    if (config.env !== "production") {
+    if (config.env !== "production" && config.env !== "staging") {
         done();
     } else {
         gulp.start("minify", done);
@@ -94,7 +94,7 @@ gulp.task("watch", function() {
     watch([config.paths.webRoot + "/fonts/**/*", config.paths.webRoot + "/img/**/*"], "resource_reload");
 });
 
-if (config.env !== "production") {
+if (config.env !== "production" && config.env !== "staging") {
 	gulp.task("run", "builds app and starts watching files", buildTasks, function() {
 		gulp.start("watch");
 		gulp.start("serve");

@@ -1,4 +1,5 @@
 var virt = require("@nathanfaucett/virt"),
+    virtDOM = require("@nathanfaucett/virt-dom"),
     extend = require("@nathanfaucett/extend"),
     css = require("@nathanfaucett/css"),
     propTypes = require("@nathanfaucett/prop_types");
@@ -18,7 +19,12 @@ function Services(props, children, context) {
         topLeft: false,
         topRight: false,
         bottomLeft: false,
-        bottomRight: false
+        bottomRight: false,
+
+        topLeftHeight: 0,
+        topRightHeight: 0,
+        bottomLeftHeight: 0,
+        bottomRightHeight: 0
     };
 }
 virt.Component.extend(Services, "Services");
@@ -30,6 +36,14 @@ Services.contextTypes = {
 };
 
 ServicesPrototype = Services.prototype;
+
+ServicesPrototype.componentDidMount = function() {
+    this.getHeights();
+};
+
+ServicesPrototype.componentWillUpdate = function() {
+    this.getHeights();
+};
 
 ServicesPrototype.createOnClick = function(key) {
     var _this = this,
@@ -59,6 +73,38 @@ ServicesPrototype.createOnClick = function(key) {
 
         _this.setState(newState);
     };
+};
+
+ServicesPrototype.getHeight = function(refName) {
+    var ref = this.refs[refName];
+
+    if (ref) {
+        return virtDOM.findDOMNode(ref).offsetHeight;
+    } else {
+        return 0;
+    }
+};
+
+ServicesPrototype.getHeights = function() {
+    var state = this.state,
+        topLeftHeight = this.getHeight("topLeftInner"),
+        topRightHeight = this.getHeight("topRightInner"),
+        bottomLeftHeight = this.getHeight("bottomLeftInner"),
+        bottomRightHeight = this.getHeight("bottomRightInner");
+
+    if (
+        state.topLeftHeight !== topLeftHeight ||
+        state.topRightHeight !== topRightHeight ||
+        state.bottomLeftHeight !== bottomLeftHeight ||
+        state.bottomRightHeight !== bottomRightHeight
+    ) {
+        this.setState({
+            topLeftHeight: topLeftHeight,
+            topRightHeight: topRightHeight,
+            bottomLeftHeight: bottomLeftHeight,
+            bottomRightHeight: bottomRightHeight
+        });
+    }
 };
 
 ServicesPrototype.getStyles = function() {
@@ -182,6 +228,13 @@ ServicesPrototype.getStyles = function() {
     styles.bottomLeftServiceExpand = extend({}, styles.serviceExpand);
     styles.bottomRightServiceExpand = extend({}, styles.serviceExpand);
 
+    if (size.width < 640) {
+        styles.topLeftService.height = state.topLeftHeight + "px";
+        styles.topRightService.height = state.topRightHeight + "px";
+        styles.bottomLeftService.height = state.bottomLeftHeight + "px";
+        styles.bottomRightService.height = state.bottomRightHeight + "px";
+    }
+
     if (size.width >= 768) {
         if (state.topLeft) {
             styles.topLeftService.width = "100%";
@@ -264,6 +317,7 @@ ServicesPrototype.render = function() {
                             style: styles.topLeftServiceHeader
                         }, i18n("services.ndt.header")),
                         virt.createView("div", {
+                                ref: "topLeftInner",
                                 style: styles.topLeftServiceBody
                             },
                             virt.createView("h2", {
@@ -312,6 +366,7 @@ ServicesPrototype.render = function() {
                             style: styles.topRightServiceHeader
                         }, i18n("services.pmri.header")),
                         virt.createView("div", {
+                                ref: "topRightInner",
                                 style: styles.topRightServiceBody
                             },
                             virt.createView("h2", {
@@ -349,6 +404,7 @@ ServicesPrototype.render = function() {
                             style: styles.bottomLeftServiceHeader
                         }, i18n("services.ssi.header")),
                         virt.createView("div", {
+                                ref: "bottomLeftInner",
                                 style: styles.bottomLeftServiceBody
                             },
                             virt.createView("h2", {
@@ -403,6 +459,7 @@ ServicesPrototype.render = function() {
                             style: styles.bottomRightServiceHeader
                         }, i18n("services.pmdci.header")),
                         virt.createView("div", {
+                                ref: "bottomRightInner",
                                 style: styles.bottomRightServiceBody
                             },
                             virt.createView("h2", {

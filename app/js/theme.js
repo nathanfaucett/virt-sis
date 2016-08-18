@@ -41,6 +41,7 @@ SISFlooringThemePrototype.getPalette = function() {
         primary4Color: "#7f8fb8",
 
         accent1Color: "#ff6600",
+        accent2Color: "#ff8800",
 
         grey1Color: "#f2f2f2",
         grey2Color: "#575555",
@@ -69,6 +70,11 @@ SISFlooringThemePrototype.getStyles = function(palette /*, spacing */ ) {
             color: palette.textColor,
             borderColor: palette.primary3Color,
             focusBorderColor: palette.accent1Color
+        },
+        button: {
+            color: palette.canvasColor,
+            backgroundColor: palette.accent1Color,
+            backgroundActiveColor: palette.accent2Color
         },
         boxShadow: "1px 2px 8px 0px " + palette.disabledColor
     };

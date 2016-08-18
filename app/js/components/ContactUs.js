@@ -6,6 +6,7 @@ var virt = require("@nathanfaucett/virt"),
     objectForEach = require("@nathanfaucett/object-for_each"),
     app = require("../app"),
     googleAnalytics = require("../googleAnalytics"),
+    Button = require("./Button"),
     Input = require("./Input");
 
 
@@ -34,6 +35,7 @@ function ContactUs(props, children, context) {
             subject: [],
             message: []
         },
+        hiddenForm: false,
         message: ""
     };
 
@@ -178,7 +180,9 @@ ContactUsPrototype.__onSubmit = function() {
 };
 
 ContactUsPrototype.getStyles = function() {
-    var context = this.context,
+    var _this = this,
+        context = this.context,
+        state = this.state,
         theme = context.theme,
         styles = {
             root: {
@@ -197,6 +201,7 @@ ContactUsPrototype.getStyles = function() {
                 padding: "32px 16px",
                 background: theme.palette.canvasColor
             },
+            form: {},
             formInput: {
                 padding: "8px",
                 marginBottom: "8px",
@@ -218,12 +223,37 @@ ContactUsPrototype.getStyles = function() {
                 background: theme.palette.accent1Color,
                 color: theme.palette.canvasColor,
                 padding: "8px 24px"
+            },
+            formMessage: {
+                textAlign: "center"
             }
         };
 
     css.borderRadius(styles.formSubmit, "0px");
     css.borderRadius(styles.formInput, "0px");
     css.borderRadius(styles.formTextArea, "0px");
+
+    css.transition(styles.form, "opacity 200ms " + css.easing.inOut + " 0ms");
+
+    if (state.hiddenForm) {
+        styles.form.display = "none";
+    }
+
+    if (state.message) {
+        css.opacity(styles.form, 0);
+        setTimeout(function onSetTimeout() {
+            _this.setState({
+                hiddenForm: true
+            });
+        }, 200);
+    } else {
+        css.opacity(styles.form, 1);
+        setTimeout(function onSetTimeout() {
+            _this.setState({
+                hiddenForm: false
+            });
+        }, 200);
+    }
 
     return styles;
 };
@@ -242,49 +272,54 @@ ContactUsPrototype.render = function() {
             virt.createView("h1", {
                 style: styles.formHeader
             }, i18n("contact_us.form.header")),
-            virt.createView(Input, {
-                name: "name",
-                placeholder: i18n("contact_us.form.name"),
-                onInput: this.onInput,
-                style: styles.formInput,
-                value: state.form.name,
-                errors: state.errors.name,
-                type: "text"
-            }),
-            virt.createView(Input, {
-                name: "email",
-                placeholder: i18n("contact_us.form.email"),
-                onInput: this.onInput,
-                style: styles.formInput,
-                value: state.form.email,
-                errors: state.errors.email,
-                type: "text"
-            }),
-            virt.createView(Input, {
-                name: "subject",
-                placeholder: i18n("contact_us.form.subject"),
-                onInput: this.onInput,
-                style: styles.formInput,
-                value: state.form.subject,
-                errors: state.errors.subject,
-                type: "text"
-            }),
-            virt.createView(Input, {
-                name: "message",
-                placeholder: i18n("contact_us.form.message"),
-                inputType: "textarea",
-                onInput: this.onInput,
-                style: styles.formTextArea,
-                value: state.form.message,
-                errors: state.errors.message
-            }),
-            virt.createView("input", {
-                style: styles.formSubmit,
-                onClick: this.onSubmit,
-                value: i18n("contact_us.form.submit"),
-                type: "submit"
-            }),
-            virt.createView("p", {
+            virt.createView("div", {
+                    style: styles.form
+                },
+                virt.createView(Input, {
+                    name: "name",
+                    placeholder: i18n("contact_us.form.name"),
+                    onInput: this.onInput,
+                    style: styles.formInput,
+                    value: state.form.name,
+                    errors: state.errors.name,
+                    type: "text"
+                }),
+                virt.createView(Input, {
+                    name: "email",
+                    placeholder: i18n("contact_us.form.email"),
+                    onInput: this.onInput,
+                    style: styles.formInput,
+                    value: state.form.email,
+                    errors: state.errors.email,
+                    type: "text"
+                }),
+                virt.createView(Input, {
+                    name: "subject",
+                    placeholder: i18n("contact_us.form.subject"),
+                    onInput: this.onInput,
+                    style: styles.formInput,
+                    value: state.form.subject,
+                    errors: state.errors.subject,
+                    type: "text"
+                }),
+                virt.createView(Input, {
+                    name: "message",
+                    placeholder: i18n("contact_us.form.message"),
+                    elementType: "textarea",
+                    onInput: this.onInput,
+                    style: styles.formTextArea,
+                    value: state.form.message,
+                    errors: state.errors.message
+                }),
+                virt.createView(Button, {
+                    elementType: "input",
+                    style: styles.formSubmit,
+                    onClick: this.onSubmit,
+                    value: i18n("contact_us.form.submit"),
+                    type: "submit"
+                })
+            ),
+            virt.createView("h3", {
                 style: styles.formMessage
             }, this.state.message)
         )
