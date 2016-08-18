@@ -2,7 +2,7 @@
     "services": {
         "ndt": {
             "header": "Nondestructive Testing Methods",
-            "body": "Nondestructive testing is a cost effective and time efficient way of ensuring your equipment is in operating condition. More and more business are trusting nondestructive testing to detect otherwise untraceable flaws in their most valued assets. Once detected you will have the information you need to prevent catastrophic machinery malfunctions and exponential losses. Southern Industrial Services utilizes an array of nondestructive testing methods to ensure that you know the exact condition of your machinery.",
+            "body": "Southern Industrial Services technicians are qualified and certified in an array of nondestructive testing methods. We have the experience and expertise needed to keep you running in a competitive and driven industry.",
             "li0": "MT Magnetic Particle Testing",
             "li1": "UT Ultrasonic Testing",
             "li2": "PT Penetrant Testing",
@@ -14,7 +14,7 @@
         },
         "ssi": {
             "header": "Suction Shell Inspections",
-            "body": "Southern Industrial Services’ has the expertise you want for all of your suction roll inspection needs. Our experienced technicians follow critical TAPPI TIP 0402-19 guidelines to ensure every examination is performed to the highest standard. Feel confident in our examinations with detailed documentation and explicative reports.",
+            "body": "Southern Industrial Services’ has the expertise you want for all of your suction roll inspection needs. Our experienced technicians follow critical TAPPI TIP 0402-19 guidelines to ensure every examination is performed to the highest standard. Feel confident in the condition of your assets with detailed documentation and explicative reports.",
             "li0": "(VT) Extensive Visual Inspection of inside diameter",
             "li1": "Hole enlargement readings",
             "li2": "(PT) Liquid Penetrant examination of inside diameter",
@@ -33,7 +33,7 @@
         },
         "ydci": {
             "header": "Yankee Dryer Can Inspections",
-            "body": "We are the company you want when you need to be sure. We have the experience to keep you confident in the health of your machinery. ",
+            "body": "We are the company you want when you need to be sure. We have the experience to keep you confident in the health of your machinery.",
             "li0": "Our technicians follow TAPPI 0425-12 guidelines",
             "li1": "(UT) Ultrasonic Testing B-scan shell thickness measurements",
             "li2": "(UT) Ultrasonic Testing Yankee dryer head bolt flaw detection",
@@ -43,7 +43,7 @@
         },
         "other": {
             "header": "Other",
-            "body": "We hold ourselves to rigorous standards at Southern Industrial Services, and are constantly seeking to improve and innovate. We are extremely confident in our ability to perform the highest quality of inspections on the market. We look forward to working together with you to keep you running and operating at the highest efficiency. "
+            "body": "We are highly confident in our technician’s ability and experience in utilizing our core methods of nondestructive testing to detect flaws in your assets. Using the science behind our nondestructive testing methods we can apply our examinations to just about any test object with extremely accurate results. Please feel free to contact us for any nondestructive testing need. We will never quote a job we are not 100% confident in our ability to detect discontinuities in the test item."
         }
     }
 }
