@@ -1,7 +1,7 @@
 var virt = require("@nathanfaucett/virt"),
-    css = require("@nathanfaucett/css"),
     propTypes = require("@nathanfaucett/prop_types"),
     eventListener = require("@nathanfaucett/event_listener"),
+    BGImage = require("./BGImage"),
     Boxes = require("./Boxes"),
     ContactUs = require("./ContactUs"),
     Services = require("./Services"),
@@ -56,47 +56,6 @@ HomePrototype.getStyles = function() {
                 position: "relative"
             },
 
-            container: {
-                paddingBottom: "16px",
-                position: "relative",
-                overflow: "hidden",
-                width: "100%",
-                height: "100%"
-            },
-
-            glare: {
-                position: "absolute",
-                top: (32 + (window.scrollY * 2)) + "px",
-                left: "50%",
-                width: "320px",
-                height: "100%",
-                background: theme.palette.canvasColor
-            },
-
-            content: {
-                position: "absolute",
-                top: "0",
-                left: "0",
-                width: "100%",
-                height: "100%"
-            },
-            contentHolder: {
-                maxWidth: "640px",
-                margin: "0 auto",
-                paddingTop: "18%",
-                color: theme.palette.canvasColor
-            },
-            title: {
-                fontSize: "52px",
-                lineHeight: "52px",
-                margin: "0"
-            },
-            body: {
-                fontSize: "24px",
-                lineHeight: "24px",
-                margin: "0"
-            },
-
             pageContent: {
                 margin: "256px auto 0px",
                 maxWidth: "640px"
@@ -141,13 +100,6 @@ HomePrototype.getStyles = function() {
         };
 
     if (size.width < 960) {
-        delete styles.contentHolder.paddingTop;
-        styles.contentHolder.padding = "5%";
-        styles.title.fontSize = "32px";
-        styles.title.lineHeight = "32px";
-        styles.body.fontSize = "16px";
-        styles.body.lineHeight = "16px";
-
         delete styles.standards.position;
         delete styles.standards.top;
         delete styles.standards.left;
@@ -169,8 +121,6 @@ HomePrototype.getStyles = function() {
         styles.standardsBody.padding = "64px 16px";
     }
 
-    css.opacity(styles.glare, 0.2);
-
     return styles;
 };
 
@@ -183,33 +133,7 @@ HomePrototype.render = function() {
                 className: "Home",
                 style: styles.root
             },
-            virt.createView(Wrapper,
-                virt.createView("div", {
-                        style: styles.container
-                    },
-                    virt.createView("img", {
-                        style: styles.bgImg,
-                        src: "img/bg.jpg"
-                    }),
-                    virt.createView("div", {
-                        style: styles.glare
-                    }),
-                    virt.createView("div", {
-                            style: styles.content
-                        },
-                        virt.createView("div", {
-                                style: styles.contentHolder
-                            },
-                            virt.createView("h1", {
-                                style: styles.title
-                            }, i18n("home.title")),
-                            virt.createView("p", {
-                                style: styles.body
-                            }, i18n("home.body"))
-                        )
-                    )
-                )
-            ),
+            virt.createView(BGImage),
             virt.createView(Boxes),
             virt.createView("div", {
                     style: styles.pageContent

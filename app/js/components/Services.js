@@ -15,6 +15,8 @@ function Services(props, children, context) {
 
     virt.Component.call(this, props, children, context);
 
+    this.lastWidth = context.size.width;
+
     this.state = {
         topLeft: false,
         topRight: false,
@@ -42,7 +44,10 @@ ServicesPrototype.componentDidMount = function() {
 };
 
 ServicesPrototype.componentWillUpdate = function() {
-    this.getHeights();
+    if (this.lastWidth !== this.context.size.width) {
+        this.lastWidth = this.context.size.width;
+        this.getHeights();
+    }
 };
 
 ServicesPrototype.createOnClick = function(key) {
