@@ -30,7 +30,7 @@ function RouteStore_update(ctx, state) {
     context.query = ctx.query;
     context.params = ctx.params;
 
-    googleAnalytics("set", "page", state);
+    googleAnalytics("set", "page", ctx.pathname);
     _route.state = state;
 }
 

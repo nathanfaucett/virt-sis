@@ -155,7 +155,7 @@ ContactUsPrototype.__onSubmit = function() {
         error = this.__validateAll(state),
         _this, formData, i18n;
 
-    googleAnalytics("set", "page", "contact_us");
+    googleAnalytics("send", "event", "Contact", "Home Submit", "Contact Us");
 
     if (error) {
         this.setState(state);
