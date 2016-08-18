@@ -74,7 +74,7 @@ BoxesPrototype.getStyles = function() {
             boxesLeftInner: {
                 textAlign: "center",
                 padding: "64px 0",
-                margin: "48px 0",
+                margin: "32px 0",
                 background: theme.palette.grey1Color
             },
             boxesH1: {
@@ -100,6 +100,9 @@ BoxesPrototype.getStyles = function() {
                 margin: "8px 0px",
                 color: theme.palette.grey1Color
             },
+            boxesButton: {
+                margin: "32px 0px 30px"
+            },
 
             equals: {
                 position: "relative",
@@ -108,7 +111,7 @@ BoxesPrototype.getStyles = function() {
             equalsContent: {
                 position: "absolute",
                 left: "-32px",
-                top: "120px",
+                top: "102px",
                 width: "64px",
                 height: "64px",
                 textAlign: "center",
@@ -189,6 +192,7 @@ BoxesPrototype.render = function() {
                                 style: styles.boxesTitle
                             }, i18n("home.boxes.title")),
                             virt.createView(Button, {
+                                style: styles.boxesButton,
                                 onClick: this.onClick
                             }, i18n("home.boxes.link"))
                         )

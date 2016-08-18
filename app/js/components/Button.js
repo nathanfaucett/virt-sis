@@ -124,7 +124,6 @@ ButtonPrototype.getStyle = function() {
         state = this.state,
         styles = {
             root: {
-                margin: "16px 0px 32px",
                 padding: "16px 24px",
                 fontSize: "18px",
                 fontWeight: "bold",
