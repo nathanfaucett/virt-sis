@@ -68,9 +68,9 @@
     "@nathanfaucett/prop_types": "0.0.1",
     "@nathanfaucett/request": "0.0.6",
     "@nathanfaucett/request_animation_frame": "0.0.2",
-    "@nathanfaucett/scroll_to": "0.0.2",
+    "@nathanfaucett/scroll_to": "0.0.3",
     "@nathanfaucett/theme": "^0.0.1",
     "@nathanfaucett/virt": "^0.0.1",
-    "@nathanfaucett/virt-dom": "^0.0.1"
+    "@nathanfaucett/virt-dom": "^0.0.2"
   }
 }

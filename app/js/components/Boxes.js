@@ -39,8 +39,8 @@ BoxesPrototype.__onClick = function() {
         documentElement = document.documentElement || document.body;
 
     scrollTo(
-        documentElement.scrollLeft,
-        documentElement.scrollTop,
+        window.pageXOffset || documentElement.scrollLeft,
+        window.pageYOffset || documentElement.scrollTop,
         domDimensions.left(div),
         domDimensions.top(div),
         1000,
