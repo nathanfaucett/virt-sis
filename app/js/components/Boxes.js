@@ -4,6 +4,7 @@ var virt = require("@nathanfaucett/virt"),
     scrollTo = require("@nathanfaucett/scroll_to"),
     easing = require("@nathanfaucett/easing"),
     emptyFunction = require("@nathanfaucett/empty_function"),
+    domDimensions = require("@nathanfaucett/dom_dimensions"),
     Button = require("./Button");
 
 
@@ -34,13 +35,14 @@ Boxes.contextTypes = {
 };
 
 BoxesPrototype.__onClick = function() {
-    var div = document.getElementById("ContactUs");
+    var div = document.getElementById("ContactUs"),
+        documentElement = document.documentElement || document.body;
 
     scrollTo(
-        window.scrollX,
-        window.scrollY,
-        div.offsetLeft,
-        div.offsetTop,
+        documentElement.scrollLeft,
+        documentElement.scrollTop,
+        domDimensions.left(div),
+        domDimensions.top(div),
         1000,
         easing.inOutQuad,
         window.scrollTo,
