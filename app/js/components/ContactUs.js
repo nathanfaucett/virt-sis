@@ -49,8 +49,8 @@ function ContactUs(props, children, context) {
     this.onSubmit = function(e) {
         return _this.__onSubmit(e);
     };
-    this.onInput = function(e) {
-        return _this.__onInput(e);
+    this.onChange = function(e) {
+        return _this.__onChange(e);
     };
 }
 virt.Component.extend(ContactUs, "ContactUs");
@@ -103,7 +103,7 @@ ContactUsPrototype.__validateAll = function(state) {
     return error;
 };
 
-ContactUsPrototype.__onInput = function(e) {
+ContactUsPrototype.__onChange = function(e) {
     var _this = this,
         componentTarget = e.componentTarget,
         name = componentTarget.props.name;
@@ -278,7 +278,7 @@ ContactUsPrototype.render = function() {
                 virt.createView(Input, {
                     name: "name",
                     placeholder: i18n("contact_us.form.name"),
-                    onInput: this.onInput,
+                    onChange: this.onChange,
                     style: styles.formInput,
                     value: state.form.name,
                     errors: state.errors.name,
@@ -287,7 +287,7 @@ ContactUsPrototype.render = function() {
                 virt.createView(Input, {
                     name: "email",
                     placeholder: i18n("contact_us.form.email"),
-                    onInput: this.onInput,
+                    onChange: this.onChange,
                     style: styles.formInput,
                     value: state.form.email,
                     errors: state.errors.email,
@@ -296,7 +296,7 @@ ContactUsPrototype.render = function() {
                 virt.createView(Input, {
                     name: "subject",
                     placeholder: i18n("contact_us.form.subject"),
-                    onInput: this.onInput,
+                    onChange: this.onChange,
                     style: styles.formInput,
                     value: state.form.subject,
                     errors: state.errors.subject,
@@ -306,7 +306,7 @@ ContactUsPrototype.render = function() {
                     name: "message",
                     placeholder: i18n("contact_us.form.message"),
                     elementType: "textarea",
-                    onInput: this.onInput,
+                    onChange: this.onChange,
                     style: styles.formTextArea,
                     value: state.form.message,
                     errors: state.errors.message

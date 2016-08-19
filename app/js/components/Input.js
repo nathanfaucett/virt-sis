@@ -108,12 +108,6 @@ InputPrototype.render = function() {
     props.onFocus = this.onFocus;
     props.onBlur = this.onBlur;
 
-    if (this.state.hover) {
-        if (props.hoverBackgroundColor) {
-            props.style.background = props.hoverBackgroundColor;
-        }
-    }
-
     return (
         virt.createView("div", {
                 styles: styles.root
