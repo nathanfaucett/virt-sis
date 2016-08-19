@@ -23,7 +23,7 @@ function compile(options, callback) {
 
         fileUtils.writeFile(
             options.out,
-            entry.source + "\n//# sourceMappingURL=index.js.map",
+            entry.source, + "\n//# sourceMappingURL=index.js.map",
             function(error) {
                 if (error) {
                     callback(error);

@@ -239,14 +239,14 @@ ContactUsPrototype.getStyles = function() {
         styles.form.display = "none";
     }
 
-    if (state.message) {
+    if (state.message && !state.hiddenForm) {
         css.opacity(styles.form, 0);
         setTimeout(function onSetTimeout() {
             _this.setState({
                 hiddenForm: true
             });
         }, 200);
-    } else {
+    } else if (state.hiddenForm) {
         css.opacity(styles.form, 1);
         setTimeout(function onSetTimeout() {
             _this.setState({
