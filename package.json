@@ -16,8 +16,8 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "@nathanfaucett/array-for_each": "^0.0.1",
-    "@nathanfaucett/comn": "0.0.3",
-    "@nathanfaucett/comn_css": "^0.0.2",
+    "@nathanfaucett/comn": "0.0.8",
+    "@nathanfaucett/comn_css": "^0.0.3",
     "@nathanfaucett/ejs": "^0.0.1",
     "@nathanfaucett/extend": "^0.0.1",
     "@nathanfaucett/file_path": "^0.0.2",
@@ -70,7 +70,7 @@
     "@nathanfaucett/request_animation_frame": "0.0.2",
     "@nathanfaucett/scroll_to": "0.0.3",
     "@nathanfaucett/theme": "^0.0.1",
-    "@nathanfaucett/virt": "^0.0.1",
-    "@nathanfaucett/virt-dom": "^0.0.2"
+    "@nathanfaucett/virt": "^0.0.2",
+    "@nathanfaucett/virt-dom": "^0.0.3"
   }
 }
