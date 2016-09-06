@@ -70,7 +70,7 @@
     "@nathanfaucett/request_animation_frame": "0.0.2",
     "@nathanfaucett/scroll_to": "0.0.3",
     "@nathanfaucett/theme": "^0.0.1",
-    "@nathanfaucett/virt": "^0.0.3",
-    "@nathanfaucett/virt-dom": "^0.0.4"
+    "@nathanfaucett/virt": "^0.0.4",
+    "@nathanfaucett/virt-dom": "^0.0.5"
   }
 }

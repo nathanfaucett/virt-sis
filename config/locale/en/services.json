@@ -2,7 +2,7 @@
     "services": {
         "ndt": {
             "header": "Nondestructive Testing Methods",
-            "body": "Southern Industrial Services technicians are qualified and certified in an array of nondestructive testing methods. We have the experience and expertise needed to keep you running in a competitive and driven industry.",
+            "body": "Southern Industrial Services’ technicians are qualified and certified in an array of nondestructive testing methods. We have the experience and expertise needed to keep you running in a competitive and driven industry.",
             "li0": "MT Magnetic Particle Testing",
             "li1": "UT Ultrasonic Testing",
             "li2": "PT Penetrant Testing",
@@ -10,11 +10,11 @@
         },
         "pmri": {
             "header": "Paper Machine Roll Inspections",
-            "body": "Roll inspections are a cost effective and time efficient means of lowering risk and increasing the lifespan of paper machine rolls. Our expert inspectors can find detrimental flaws and indications that could lead to catastrophic damage if left undetected."
+            "body": "Roll inspections are a cost effective and time efficient means of lowering risk as well as increasing the lifespan of paper machine rolls. Our expert inspectors can find detrimental flaws and indications that could lead to catastrophic damage if left undetected. You can be confident in the condition of your assets with our thorough examinations and detailed reporting."
         },
         "ssi": {
-            "header": "Suction Shell Inspections",
-            "body": "Southern Industrial Services’ has the expertise you want for all of your suction roll inspection needs. Our experienced technicians follow critical TAPPI TIP 0402-19 guidelines to ensure every examination is performed to the highest standard. Feel confident in the condition of your assets with detailed documentation and explicative reports.",
+            "header": "Suction Roll Inspections",
+            "body": "Suction roll inspections are a reliable means of verifying your machine is capable of operating up to standard. Our experienced technicians conduct meticulous examinations that have the highest probability of detecting discontinuities. You can feel confident in the condition of your assets with detailed documentation and explicative reports.  ",
             "li0": "(VT) Extensive Visual Inspection of inside diameter",
             "li1": "Hole enlargement readings",
             "li2": "(PT) Liquid Penetrant examination of inside diameter",
@@ -24,7 +24,7 @@
         },
         "pmdci": {
             "header": "Paper Machine Dryer Can Inspections",
-            "body": "Southern Industrial Services’ provides industry leading dryer inspection services. Our state of the art B-scan equipment will give you the most accurate thickness data possible. We have the expertise and experience to ensure your dryers are given the most accurate examinations on the market. We take pride in our detailed reports so that you can know the exact condition of your dryers.",
+            "body": "A dryer can failure is one of, if not, the most detrimental events that could occur in your facility. We have the expertise and experience to ensure your dryers are given the most accurate examinations on the market. Our state of the art B-scan equipment will give you the most accurate thickness data possible. We take pride in our detailed reports so that you can know the exact condition of your dryers.",
             "li0": "Our technicians follow TAPPI 0402-16 guidelines",
             "li1": "(UT) Ultrasonic Testing B-scan shell thickness measurements",
             "li2": "(UT) Ultrasonic Testing dryer head bolt flaw detection",
@@ -32,8 +32,8 @@
             "li4": "(VT) Visual Testing dryer internals"
         },
         "ydci": {
-            "header": "Yankee Dryer Can Inspections",
-            "body": "We are the company you want when you need to be sure. We have the experience to keep you confident in the health of your machinery.",
+            "header": "Yankee Dryer Fitness For Service",
+            "body": "The yankee dryer has been considered the heart of the paper machine, and as this would imply, it is vitally important to the paper making process. We have the experience to keep you confident in the health of this valuable asset. Our technicians provide industry leading testing that will get you the information you need to make critical decisions.",
             "li0": "Our technicians follow TAPPI 0425-12 guidelines",
             "li1": "(UT) Ultrasonic Testing B-scan shell thickness measurements",
             "li2": "(UT) Ultrasonic Testing Yankee dryer head bolt flaw detection",
