@@ -20,11 +20,15 @@ function Services(props, children, context) {
     this.state = {
         topLeft: false,
         topRight: false,
+        middleLeft: false,
+        middleRight: false,
         bottomLeft: false,
         bottomRight: false,
 
         topLeftHeight: 0,
         topRightHeight: 0,
+        middleLeftHeight: 0,
+        middleRightHeight: 0,
         bottomLeftHeight: 0,
         bottomRightHeight: 0
     };
@@ -67,6 +71,12 @@ ServicesPrototype.createOnClick = function(key) {
                 case "topRight":
                     newState.topLeft = false;
                     break;
+                case "middleLeft":
+                    newState.middleRight = false;
+                    break;
+                case "middleRight":
+                    newState.middleLeft = false;
+                    break;
                 case "bottomLeft":
                     newState.bottomRight = false;
                     break;
@@ -94,18 +104,24 @@ ServicesPrototype.getHeights = function() {
     var state = this.state,
         topLeftHeight = this.getHeight("topLeftInner"),
         topRightHeight = this.getHeight("topRightInner"),
+        middleLeftHeight = this.getHeight("middleLeftInner"),
+        middleRightHeight = this.getHeight("middleRightInner"),
         bottomLeftHeight = this.getHeight("bottomLeftInner"),
         bottomRightHeight = this.getHeight("bottomRightInner");
 
     if (
         state.topLeftHeight !== topLeftHeight ||
         state.topRightHeight !== topRightHeight ||
+        state.middleLeftHeight !== middleLeftHeight ||
+        state.middleRightHeight !== middleRightHeight ||
         state.bottomLeftHeight !== bottomLeftHeight ||
         state.bottomRightHeight !== bottomRightHeight
     ) {
         this.setState({
             topLeftHeight: topLeftHeight,
             topRightHeight: topRightHeight,
+            middleLeftHeight: middleLeftHeight,
+            middleRightHeight: middleRightHeight,
             bottomLeftHeight: bottomLeftHeight,
             bottomRightHeight: bottomRightHeight
         });
@@ -131,7 +147,7 @@ ServicesPrototype.getStyles = function() {
                 color: theme.palette.canvasColor,
                 padding: "64px 0px 32px",
                 textAlign: "center",
-                height: "480px"
+                height: "400px"
             },
             serviceHeader: {
                 padding: "0 8px",
@@ -213,6 +229,16 @@ ServicesPrototype.getStyles = function() {
     styles.topLeftServiceBody = extend({}, styles.serviceBody);
     styles.topRightServiceBody = extend({}, styles.serviceBody);
 
+    styles.middleLeftService = extend({
+        background: theme.palette.primary1Color
+    }, styles.leftService);
+    styles.middleRightService = extend({
+        background: theme.palette.primary2Color
+    }, styles.rightService);
+
+    styles.middleLeftServiceBody = extend({}, styles.serviceBody);
+    styles.middleRightServiceBody = extend({}, styles.serviceBody);
+
     styles.bottomLeftService = extend({
         background: theme.palette.primary2Color
     }, styles.leftService);
@@ -225,17 +251,23 @@ ServicesPrototype.getStyles = function() {
 
     styles.topLeftServiceHeader = extend({}, styles.serviceHeader);
     styles.topRightServiceHeader = extend({}, styles.serviceHeader);
+    styles.middleLeftServiceHeader = extend({}, styles.serviceHeader);
+    styles.middleRightServiceHeader = extend({}, styles.serviceHeader);
     styles.bottomLeftServiceHeader = extend({}, styles.serviceHeader);
     styles.bottomRightServiceHeader = extend({}, styles.serviceHeader);
 
     styles.topLeftServiceExpand = extend({}, styles.serviceExpand);
     styles.topRightServiceExpand = extend({}, styles.serviceExpand);
+    styles.middleLeftServiceExpand = extend({}, styles.serviceExpand);
+    styles.middleRightServiceExpand = extend({}, styles.serviceExpand);
     styles.bottomLeftServiceExpand = extend({}, styles.serviceExpand);
     styles.bottomRightServiceExpand = extend({}, styles.serviceExpand);
 
     if (size.width < 640) {
         styles.topLeftService.height = state.topLeftHeight + "px";
         styles.topRightService.height = state.topRightHeight + "px";
+        styles.middleLeftService.height = state.middleLeftHeight + "px";
+        styles.middleRightService.height = state.middleRightHeight + "px";
         styles.bottomLeftService.height = state.bottomLeftHeight + "px";
         styles.bottomRightService.height = state.bottomRightHeight + "px";
     }
@@ -255,6 +287,20 @@ ServicesPrototype.getStyles = function() {
             styles.topRightService.background = theme.palette.grey1Color;
             styles.topRightServiceExpand.display = styles.topRightServiceHeader.display = "none";
         }
+        if (state.middleLeft) {
+            styles.middleLeftService.width = "100%";
+            styles.middleRightService.width = "0%";
+            css.opacity(styles.middleLeftServiceBody, 1);
+            styles.middleLeftService.background = theme.palette.grey1Color;
+            styles.middleLeftServiceExpand.display = styles.middleLeftServiceHeader.display = "none";
+        }
+        if (state.middleRight) {
+            styles.middleLeftService.width = "0%";
+            styles.middleRightService.width = "100%";
+            css.opacity(styles.middleRightServiceBody, 1);
+            styles.middleRightService.background = theme.palette.grey1Color;
+            styles.middleRightServiceExpand.display = styles.middleRightServiceHeader.display = "none";
+        }
         if (state.bottomLeft) {
             styles.bottomLeftService.width = "100%";
             styles.bottomRightService.width = "0%";
@@ -270,7 +316,9 @@ ServicesPrototype.getStyles = function() {
             styles.bottomRightServiceExpand.display = styles.bottomRightServiceHeader.display = "none";
         }
     } else {
-        styles.topLeftService.marginBottom = styles.bottomLeftService.marginBottom = "32px";
+        styles.topLeftService.marginBottom =
+            styles.middleLeftService.marginBottom =
+            styles.bottomLeftService.marginBottom = "32px";
 
         if (state.topLeft) {
             css.opacity(styles.topLeftServiceBody, 1);
@@ -281,6 +329,16 @@ ServicesPrototype.getStyles = function() {
             css.opacity(styles.topRightServiceBody, 1);
             styles.topRightService.background = theme.palette.grey1Color;
             styles.topRightServiceExpand.display = styles.topRightServiceHeader.display = "none";
+        }
+        if (state.middleLeft) {
+            css.opacity(styles.middleLeftServiceBody, 1);
+            styles.middleLeftService.background = theme.palette.grey1Color;
+            styles.middleLeftServiceExpand.display = styles.middleLeftServiceHeader.display = "none";
+        }
+        if (state.middleRight) {
+            css.opacity(styles.middleRightServiceBody, 1);
+            styles.middleRightService.background = theme.palette.grey1Color;
+            styles.middleRightServiceExpand.display = styles.middleRightServiceHeader.display = "none";
         }
         if (state.bottomLeft) {
             css.opacity(styles.bottomLeftServiceBody, 1);
@@ -378,6 +436,19 @@ ServicesPrototype.render = function() {
                                 style: styles.bodyHeader
                             }, i18n("services.pmri.header")),
                             virt.createView("p", i18n("services.pmri.body")),
+                            virt.createView("ul", {
+                                    style: styles.ul
+                                },
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmri.li0")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmri.li1")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmri.li2"))
+                            ),
                             virt.createView("div", {
                                     style: styles.closeButton
                                 },
@@ -400,17 +471,21 @@ ServicesPrototype.render = function() {
                         className: "clear"
                     })
                 ),
-                virt.createView("div",
+                virt.createView("div", {
+                        style: {
+                            marginBottom: "32px"
+                        }
+                    },
                     virt.createView("div", {
-                            style: styles.bottomLeftService,
-                            onClick: this.createOnClick("bottomLeft")
+                            style: styles.middleLeftService,
+                            onClick: this.createOnClick("middleLeft")
                         },
                         virt.createView("h1", {
-                            style: styles.bottomLeftServiceHeader
+                            style: styles.middleLeftServiceHeader
                         }, i18n("services.ssi.header")),
                         virt.createView("div", {
-                                ref: "bottomLeftInner",
-                                style: styles.bottomLeftServiceBody
+                                ref: "middleLeftInner",
+                                style: styles.middleLeftServiceBody
                             },
                             virt.createView("h2", {
                                 style: styles.bodyHeader
@@ -448,7 +523,7 @@ ServicesPrototype.render = function() {
                             )
                         ),
                         virt.createView("div", {
-                                style: styles.bottomLeftServiceExpand
+                                style: styles.middleLeftServiceExpand
                             },
                             virt.createView("img", {
                                 style: styles.serviceExpandImg,
@@ -457,15 +532,15 @@ ServicesPrototype.render = function() {
                         )
                     ),
                     virt.createView("div", {
-                            style: styles.bottomRightService,
-                            onClick: this.createOnClick("bottomRight")
+                            style: styles.middleRightService,
+                            onClick: this.createOnClick("middleRight")
                         },
                         virt.createView("h1", {
-                            style: styles.bottomRightServiceHeader
+                            style: styles.middleRightServiceHeader
                         }, i18n("services.pmdci.header")),
                         virt.createView("div", {
-                                ref: "bottomRightInner",
-                                style: styles.bottomRightServiceBody
+                                ref: "middleRightInner",
+                                style: styles.middleRightServiceBody
                             },
                             virt.createView("h2", {
                                 style: styles.bodyHeader
@@ -489,6 +564,118 @@ ServicesPrototype.render = function() {
                                 virt.createView("li", {
                                     style: styles.li
                                 }, i18n("services.pmdci.li4"))
+                            ),
+                            virt.createView("div", {
+                                    style: styles.closeButton
+                                },
+                                virt.createView("img", {
+                                    style: styles.closeButtonImg,
+                                    src: "img/plus_black.png"
+                                })
+                            )
+                        ),
+                        virt.createView("div", {
+                                style: styles.middleRightServiceExpand
+                            },
+                            virt.createView("img", {
+                                style: styles.serviceExpandImg,
+                                src: "img/plus.png"
+                            })
+                        )
+                    ),
+                    virt.createView("div", {
+                        className: "clear"
+                    })
+                ),
+                virt.createView("div",
+                    virt.createView("div", {
+                            style: styles.bottomLeftService,
+                            onClick: this.createOnClick("bottomLeft")
+                        },
+                        virt.createView("h1", {
+                            style: styles.bottomLeftServiceHeader
+                        }, i18n("services.pmrs.header")),
+                        virt.createView("div", {
+                                ref: "bottomLeftInner",
+                                style: styles.bottomLeftServiceBody
+                            },
+                            virt.createView("h2", {
+                                style: styles.bodyHeader
+                            }, i18n("services.pmrs.header")),
+                            virt.createView("p", i18n("services.pmrs.body")),
+                            virt.createView("ul", {
+                                    style: styles.ul
+                                },
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmrs.li0")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmrs.li1")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmrs.li2")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmrs.li3")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.pmrs.li4"))
+                            ),
+                            virt.createView("div", {
+                                    style: styles.closeButton
+                                },
+                                virt.createView("img", {
+                                    style: styles.closeButtonImg,
+                                    src: "img/plus_black.png"
+                                })
+                            )
+                        ),
+                        virt.createView("div", {
+                                style: styles.bottomLeftServiceExpand
+                            },
+                            virt.createView("img", {
+                                style: styles.serviceExpandImg,
+                                src: "img/plus.png"
+                            })
+                        )
+                    ),
+                    virt.createView("div", {
+                            style: styles.bottomRightService,
+                            onClick: this.createOnClick("bottomRight")
+                        },
+                        virt.createView("h1", {
+                            style: styles.bottomRightServiceHeader
+                        }, i18n("services.ydci.header")),
+                        virt.createView("div", {
+                                ref: "bottomRightInner",
+                                style: styles.bottomRightServiceBody
+                            },
+                            virt.createView("h2", {
+                                style: styles.bodyHeader
+                            }, i18n("services.ydci.header")),
+                            virt.createView("p", i18n("services.ydci.body")),
+                            virt.createView("ul", {
+                                    style: styles.ul
+                                },
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li0")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li1")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li2")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li3")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li4")),
+                                virt.createView("li", {
+                                    style: styles.li
+                                }, i18n("services.ydci.li5"))
                             ),
                             virt.createView("div", {
                                     style: styles.closeButton

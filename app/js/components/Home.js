@@ -82,6 +82,7 @@ HomePrototype.getStyles = function() {
                 textAlign: "center",
                 fontSize: "64px",
                 lineHeight: "64px",
+                marginBottom: "0px",
                 color: theme.palette.canvasColor
             },
             standardsBody: {

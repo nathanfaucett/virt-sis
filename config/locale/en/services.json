@@ -10,12 +10,15 @@
         },
         "pmri": {
             "header": "Paper Machine Roll Inspections",
-            "body": "Roll inspections are a cost effective and time efficient means of lowering risk as well as increasing the lifespan of paper machine rolls. Our expert inspectors can find detrimental flaws and indications that could lead to catastrophic damage if left undetected. You can be confident in the condition of your assets with our thorough examinations and detailed reporting."
+            "body": "Roll inspections are a cost effective and time efficient means of lowering risk as well as increasing the lifespan of paper machine rolls. Our expert inspectors can find detrimental flaws and indications that could lead to catastrophic damage if left undetected. You can be confident in the condition of your assets with our thorough examinations and detailed reporting.",
+            "li0": "(VT), (MT), and (PT) examinations of roll body, heads, and journals",
+            "li1": "(UT) thickness measurements along and around roll body",
+            "li2": "(UT) journal length measurements and flaw detection"
         },
         "ssi": {
             "header": "Suction Roll Inspections",
-            "body": "Suction roll inspections are a reliable means of verifying your machine is capable of operating up to standard. Our experienced technicians conduct meticulous examinations that have the highest probability of detecting discontinuities. You can feel confident in the condition of your assets with detailed documentation and explicative reports.  ",
-            "li0": "(VT) Extensive Visual Inspection of inside diameter",
+            "body": "Suction roll inspections are a reliable means of verifying your machine is capable of operating up to standard. Our experienced technicians conduct meticulous examinations that have the highest probability of detecting discontinuities. You can feel confident in the condition of your assets with detailed documentation and explicative reports.",
+            "li0": "Our technicians follow TAPPI TIP 0402-19 guidelines",
             "li1": "Hole enlargement readings",
             "li2": "(PT) Liquid Penetrant examination of inside diameter",
             "li3": "(PT) Fluorescent Penetrant examination of roll head fits",
@@ -37,13 +40,23 @@
             "li0": "Our technicians follow TAPPI 0425-12 guidelines",
             "li1": "(UT) Ultrasonic Testing B-scan shell thickness measurements",
             "li2": "(UT) Ultrasonic Testing Yankee dryer head bolt flaw detection",
+            "li3": "Head tilt measurements",
             "li3": "Headers and straw condition assessment",
             "li4": "(MT) Wet Fluorescent Magnetic Particle Test dryer heads / shells / journals",
             "li5": "(VT) Visual Testing dryer internals"
         },
+        "pmrs": {
+          "header": "Paper Machine Roll Shops",
+          "body": "Our technicians have the nondestructive testing knowledge and experience roll shops need. Our ability to meet every NDT need in house will keep you and your customers completely satisfied. Adding NDT to your roll shop’s list of services provided could dramatically increase your profits, increase your inflow of new paper machine rolls, and help shift liability risk away from your shop. A deep understanding of the science behind our NDT methods gives our technicians the flexibility to meet all your examination needs.",
+          "li0": "Thorough and accurate ultrasonic testing for delamination in roll covers",
+          "li1": "(MT) and/or (PT) examinations of paper machine rolls",
+          "li2": "(UT) thickness measurements of paper machine rolls",
+          "li3": "Detailed suction shell examinations",
+          "li4": "(PT) roll covers for discontinuities"
+        },
         "other": {
             "header": "Other",
-            "body": "We are highly confident in our technician’s ability and experience in utilizing our core methods of nondestructive testing to detect flaws in your assets. Using the science behind our nondestructive testing methods we can apply our examinations to just about any test object with extremely accurate results. Please feel free to contact us for any nondestructive testing need. We will never quote a job we are not 100% confident in our ability to detect discontinuities in the test item."
+            "body": "We are highly confident in our technicians’ ability and experience in utilizing our core methods of nondestructive testing to detect flaws in your assets. Using the science behind our nondestructive testing methods we can apply our examinations to just about any test object with extremely accurate results. Please feel free to contact us for any nondestructive testing need. We will never quote a job we are not 100% confident in our ability to detect discontinuities in the test item."
         }
     }
 }
