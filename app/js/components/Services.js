@@ -230,20 +230,20 @@ ServicesPrototype.getStyles = function() {
     styles.topRightServiceBody = extend({}, styles.serviceBody);
 
     styles.middleLeftService = extend({
-        background: theme.palette.primary1Color
+        background: theme.palette.primary2Color
     }, styles.leftService);
     styles.middleRightService = extend({
-        background: theme.palette.primary2Color
+        background: theme.palette.primary1Color
     }, styles.rightService);
 
     styles.middleLeftServiceBody = extend({}, styles.serviceBody);
     styles.middleRightServiceBody = extend({}, styles.serviceBody);
 
     styles.bottomLeftService = extend({
-        background: theme.palette.primary2Color
+        background: theme.palette.primary1Color
     }, styles.leftService);
     styles.bottomRightService = extend({
-        background: theme.palette.primary1Color
+        background: theme.palette.primary2Color
     }, styles.rightService);
 
     styles.bottomLeftServiceBody = extend({}, styles.serviceBody);
